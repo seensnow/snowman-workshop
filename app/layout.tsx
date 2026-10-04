@@ -31,8 +31,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN" style={{
-      '--cursor-snowflake': `url("${basePath}/cursor-snowflake.svg") 16 16`,
-      '--cursor-snowman': `url("${basePath}/cursor-snowman.svg") 16 3`,
+      '--cursor-ice': `url("${basePath}/cursor-ice.svg") 3 2`,
     } as CSSProperties}>
       <body className="antialiased">{children}</body>
     </html>

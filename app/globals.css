@@ -267,13 +267,9 @@ body { background:#eef5fa; }
   .sketch-footer a { justify-self:start; }
 }
 
-/* Small native cursors keep the exact click point and work without JavaScript. */
+/* One ice arrow for every hover state, with the click point at its tip. */
 @media (hover:hover) and (pointer:fine) {
-  html,body { cursor:var(--cursor-snowflake),auto; }
-  :where(a,button,[role="button"],summary,label[for]) { cursor:var(--cursor-snowman),pointer; }
-  :where(a,button,[role="button"],summary) * { cursor:inherit; }
-  button:disabled { cursor:not-allowed; }
-  input,textarea,[contenteditable="true"] { cursor:text; }
+  html,body,body * { cursor:var(--cursor-ice),default; }
 }
 
 .nav-item { transition:color .22s,background .22s; }
