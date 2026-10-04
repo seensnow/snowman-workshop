@@ -267,11 +267,6 @@ body { background:#eef5fa; }
   .sketch-footer a { justify-self:start; }
 }
 
-/* One ice arrow for every hover state, with the click point at its tip. */
-@media (hover:hover) and (pointer:fine) {
-  html,body,body * { cursor:var(--cursor-ice),default; }
-}
-
 .nav-item { transition:color .22s,background .22s; }
 .nav-item span { transition:transform .22s; }
 .nav-item:hover span { transform:translateY(-3px); }

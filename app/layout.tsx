@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import type { CSSProperties } from 'react';
 import './globals.css';
 
 export const dynamic = 'force-static';
@@ -30,9 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN" style={{
-      '--cursor-ice': `url("${basePath}/cursor-ice.svg") 3 2`,
-    } as CSSProperties}>
+    <html lang="zh-CN">
       <body className="antialiased">{children}</body>
     </html>
   );
