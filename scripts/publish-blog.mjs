@@ -15,7 +15,7 @@ function gitText(args) {
 if (gitText(['branch', '--show-current']) !== 'main') throw new Error('请在 main 分支发布博客。');
 if (gitText(['diff', '--cached', '--name-only'])) throw new Error('暂存区已有其他修改，请先处理，再发布博客。');
 await syncBlog();
-run('npm', ['run', 'build'], { env: { ...process.env, GITHUB_PAGES: 'true', GITHUB_REPOSITORY: 'seensnow/seenrain' } });
+run('npm', ['run', 'build'], { env: { ...process.env, GITHUB_PAGES: 'true', GITHUB_REPOSITORY: 'seensnow/snowman-workshop' } });
 run('git', ['add', '-A', '--', 'content/blogs', 'app/blogs/posts.json']);
 if (gitText(['diff', '--cached', '--name-only'])) run('git', ['commit', '-m', 'Update blog content']);
 run('git', ['push', 'origin', 'main']);

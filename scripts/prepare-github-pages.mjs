@@ -2,7 +2,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 
 const outputDir = path.resolve('dist/client');
-const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'seenrain';
+const repositoryName = process.env.GITHUB_REPOSITORY?.split('/')[1] ?? 'snowman-workshop';
 const basePath = process.env.GITHUB_PAGES === 'true' ? `/${repositoryName}` : '';
 
 function walk(directory) {

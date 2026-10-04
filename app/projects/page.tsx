@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 const projects = [
   { title: 'Simple Reader', type: '应用', description: '项目介绍和公开链接正在整理中。' },
-  { title: '雪人工坊', type: '个人网站', description: '一个记录项目、笔记和日常想法的个人空间。', href: 'https://github.com/seensnow/seenrain' },
+  { title: '雪人工坊', type: '个人网站', description: '一个记录项目、笔记和日常想法的个人空间。', href: 'https://github.com/seensnow/snowman-workshop' },
 ];
 
 export default function ProjectsPage() {
