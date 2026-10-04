@@ -11,7 +11,6 @@ export default function SiteSidebar({ active = '首页', status = '在线' }: { 
       <div className="skyline-banner" aria-hidden="true">
         <div className="banner-identity">
           <strong>雪人工坊</strong>
-          <span>一个学生的个人网站</span>
         </div>
         <div className="header-sun" />
         <div className="header-mountain mountain-back" />

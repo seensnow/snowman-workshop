@@ -16,9 +16,9 @@ export default function Home() {
             <h2>关于我</h2>
           </header>
           <div className="about-writing-box">
-            <p className="writing-label">关于我的介绍</p>
-            <div className="writing-lines" aria-hidden="true"><i /><i /><i /></div>
-            <p className="writing-hint">这里会记录我的经历、兴趣，以及雪人工坊背后的故事。</p>
+            <p className="about-introduction">
+              我的名字是<span className="private-name" role="img" aria-label="名字暂不透露"><i /><i /><i /></span>，当前是剑桥大学工程学生，会在网站上记录一些博客和做过的项目。
+            </p>
           </div>
         </section>
 
