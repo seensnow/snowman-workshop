@@ -267,4 +267,33 @@ body { background:#eef5fa; }
   .sketch-footer a { justify-self:start; }
 }
 
+/* Small native cursors keep the exact click point and work without JavaScript. */
+@media (hover:hover) and (pointer:fine) {
+  html,body { cursor:var(--cursor-snowflake),auto; }
+  :where(a,button,[role="button"],summary,label[for]) { cursor:var(--cursor-snowman),pointer; }
+  :where(a,button,[role="button"],summary) * { cursor:inherit; }
+  button:disabled { cursor:not-allowed; }
+  input,textarea,[contenteditable="true"] { cursor:text; }
+}
+
+.nav-item { transition:color .22s,background .22s; }
+.nav-item span { transition:transform .22s; }
+.nav-item:hover span { transform:translateY(-3px); }
+.nav-item:focus-visible { outline:2px solid var(--blue); outline-offset:-6px; }
+
+@keyframes page-arrive { from { opacity:0; transform:translateY(12px); } to { opacity:1; transform:translateY(0); } }
+@keyframes page-leave { to { opacity:0; transform:translateY(-8px); } }
+
+@media (prefers-reduced-motion:no-preference) {
+  @view-transition { navigation:auto; }
+  .skyline-banner { view-transition-name:site-banner; }
+  .topbar { view-transition-name:site-navigation; }
+  .nav-item.active::after { view-transition-name:active-tab; }
+  .sketch-content,.content-stage,.blog-stage,.construction-stage { view-transition-name:page-content; animation:page-arrive .32s ease-out both; }
+  ::view-transition-group(*) { animation-duration:.32s; animation-timing-function:cubic-bezier(.22,.68,0,1); }
+  ::view-transition-old(site-banner),::view-transition-new(site-banner) { animation:none; }
+  ::view-transition-old(page-content) { animation:page-leave .16s ease-in both; }
+  ::view-transition-new(page-content) { animation:page-arrive .32s ease-out both; }
+}
+
 @media (prefers-reduced-motion:reduce) { *,*::before,*::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; } }

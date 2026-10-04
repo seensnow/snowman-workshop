@@ -21,7 +21,7 @@ export default function SiteSidebar({ active = '首页', status = '在线' }: { 
       <div className="topbar">
         <nav aria-label="主导航" className="nav-list">
           {navItems.map((item) => (
-            <a key={item.label} href={`${basePath}${item.href}`} className={`nav-item ${item.label === active ? 'active' : ''}`}>
+            <a key={item.label} href={`${basePath}${item.href}`} aria-current={item.label === active ? 'page' : undefined} className={`nav-item ${item.label === active ? 'active' : ''}`}>
               <span>{item.label}</span>
             </a>
           ))}

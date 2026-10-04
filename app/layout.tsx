@@ -1,11 +1,14 @@
 import type { Metadata } from 'next';
+import type { CSSProperties } from 'react';
 import './globals.css';
 
 export const dynamic = 'force-static';
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? '';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://seensnow.github.io/snowman-workshop/'),
   title: '雪人工坊',
+  icons: { icon: [{ url: `${basePath}/favicon.svg`, type: 'image/svg+xml' }] },
   description: '雪人工坊的个人空间，记录项目、笔记和日常想法。',
   openGraph: {
     title: '雪人工坊',
@@ -27,7 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="zh-CN">
+    <html lang="zh-CN" style={{
+      '--cursor-snowflake': `url("${basePath}/cursor-snowflake.svg") 16 16`,
+      '--cursor-snowman': `url("${basePath}/cursor-snowman.svg") 16 3`,
+    } as CSSProperties}>
       <body className="antialiased">{children}</body>
     </html>
   );
